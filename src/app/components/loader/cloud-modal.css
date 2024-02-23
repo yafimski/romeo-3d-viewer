@@ -1,0 +1,188 @@
+.load-files-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.load-files-modal {
+  width: 40%;
+  height: 60%;
+  background-color: white;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  position: relative;
+  align-items: center;
+}
+
+.load-files-modal-header {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin-left: 5%;
+}
+
+.load-files-modal-header > p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.load-files-modal-footer {
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.load-files-row {
+  display: flex;
+  width: 90%;
+  padding: 1rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 0.5px solid var(--color-mediumgray);
+}
+
+.load-files-row > span {
+  display: flex;
+  width: 100%;
+}
+
+.load-files-row-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.load-files-row-buttons > img {
+  transition: transform 0.3s;
+  margin-left: 1rem;
+}
+
+.load-files-row-buttons > img:hover {
+  transform: scale(1.2);
+  border-radius: 50%;
+}
+
+.load-files-row:focus {
+  background-color: var(--color-lightgray);
+  border-top: 1px solid var(--color-mediumgray);
+  border-bottom: 1px solid var(--color-mediumgray);
+}
+
+.load-files-modal-button {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border: none;
+  margin: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.load-files-modal-button:hover {
+  transform: scale(1.2);
+  border-radius: 50%;
+}
+
+.modal-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.modal-button-close :hover {
+  text-decoration: none;
+  transition-duration: 0.5s;
+  color: var(--color-cancel);
+}
+
+.modal-button-accept :hover {
+  text-decoration: none;
+  transition-duration: 0.5s;
+  color: var(--color-accept);
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  margin: auto;
+  position: relative;
+}
+
+.spinner:before {
+  content: "";
+  width: 2rem;
+  height: 0.3rem;
+  background: #f0808050;
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow324 0.5s linear infinite;
+}
+
+.spinner:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f08080;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.2rem;
+  animation: jump7456 0.5s linear infinite;
+}
+
+@keyframes jump7456 {
+  15% {
+    border-bottom-right-radius: 0.3rem;
+  }
+
+  25% {
+    transform: translateY(0.7rem) rotate(22.5deg);
+  }
+
+  50% {
+    transform: translateY(1.2rem) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 1.8rem;
+  }
+
+  75% {
+    transform: translateY(0.7rem) rotate(67.5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow324 {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
+.spinner-container {
+  position: absolute;
+  bottom: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}

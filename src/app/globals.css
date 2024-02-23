@@ -1,0 +1,492 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --font-family: "Raleway", sans-serif;
+  --color-accept: rgb(0, 180, 0);
+  --color-lightgray: rgb(240, 240, 240);
+  --color-mediumgray: rgb(200, 200, 200);
+  --color-darkgray: rgb(80, 80, 80);
+  --color-verdarkgray: rgb(30, 30, 30);
+  --color-cancel: rgb(170, 170, 170);
+}
+
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  float: left;
+  height: 6vh;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-family: var(--font-family);
+  font-weight: 300;
+}
+
+h1 {
+  margin: auto;
+  margin-left: 0.5rem;
+  font-family: var(--font-family);
+  font-weight: lighter;
+  font-size: 1.2rem;
+  color: rgb(100, 100, 100);
+  cursor: pointer;
+}
+
+header > img {
+  width: 2.4rem;
+  margin: 0.3rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+.header-style {
+  display: flex;
+  align-items: center;
+}
+
+.header-style > span {
+  float: right;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.navbar {
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
+  padding-left: 0.5rem;
+}
+
+.basic-3d-viewer-container {
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
+
+.viewer-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.button-bar {
+  display: inline-block;
+  width: 100%;
+  background-color: var(--color-lightgray);
+  padding-left: 0.3rem;
+  height: 2.4rem;
+  margin-bottom: 0rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.online-3d-viewer {
+  flex: 1;
+  object-fit: cover;
+}
+
+.generic-button {
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  margin: 0;
+  background-color: transparent;
+  padding: 0.5rem;
+}
+
+.generic-button:hover {
+  text-decoration: none;
+  transition-duration: 0.5s;
+  background-color: var(--color-mediumgray);
+}
+
+.generic-button:disabled {
+  background-color: #fafbfc;
+  border-color: var(--color-verdarkgray);
+  color: #959da5;
+  cursor: default;
+}
+
+.generic-button:active {
+  background-color: var(--color-lightgray);
+  box-shadow: var(--color-mediumgray) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.generic-button:focus {
+  outline: 1px transparent;
+}
+
+.generic-button:before {
+  display: none;
+}
+
+.generic-button:-webkit-details-marker {
+  display: none;
+}
+
+.fixed-top-left {
+  float: left;
+}
+
+.fixed-top-right {
+  width: 10%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  float: right;
+}
+
+.fixed-top-right > h3 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-right: 0.5rem;
+}
+
+.generic-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.generic-modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12%;
+  height: 8%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: 0.8rem;
+}
+
+.generic-modal-content h2 {
+  margin: auto;
+  color: gray;
+  font-weight: 300;
+}
+
+.lobby-screen {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+.splash-modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5rem;
+}
+
+.splash-content {
+  text-align: center;
+  align-items: center;
+}
+
+.splash-content h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
+}
+
+.splash-content h1 {
+  color: black;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.splash-content h2 {
+  font-weight: 300;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.splash-content h3 {
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+.splash-content h4 {
+  font-weight: 400;
+  margin-top: 3rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.splash-content img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.side-modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+.side-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  padding: 2rem;
+  height: 40%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.side-modal-content h4 {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.side-modal-content h3 {
+  font-weight: 500;
+}
+
+.side-modal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #0088dd;
+  box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+  font-size: 0.9rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.subscribe-button {
+  font-size: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #0088dd;
+  margin-bottom: 1rem;
+}
+
+.flex-subscribe {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.login-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  background-color: #0088dd;
+  box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.3);
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+  font-size: 0.9rem;
+}
+
+.login-button > .button-icon {
+  margin-left: 1rem;
+}
+
+.login-button > span {
+  display: flex;
+  align-items: center;
+}
+
+.button-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.email-sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-sign-in > button {
+  display: flex;
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  margin: 0.5rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sign-in-label > input {
+  height: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid rgb(180, 180, 180);
+  width: 100%;
+}
+
+.sign-in-label > input:focus {
+  border-color: #aaa;
+  outline: 0.5px solid black;
+}
+
+.register-sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+  padding: 2rem;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 0.8rem;
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+.register > p {
+  font-family: var(--font-family);
+  text-justify: right;
+  margin-right: 0.5rem;
+}
+
+.register > span {
+  font-weight: 600;
+  color: purple;
+  font-family: var(--font-family);
+}
+
+.register-close-button {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  justify-content: right;
+  cursor: pointer;
+}
+
+.register-sign-in > h4 {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.success-popup-modal {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  overflow: auto;
+  align-items: center;
+}
+
+.success-popup-modal > h2 {
+  font: var(--font-family);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pulse-animation {
+  animation: pulse 1s infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+#my-canvas {
+  width: 100%;
+  height: 0;
+}
